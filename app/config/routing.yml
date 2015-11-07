@@ -1,3 +1,5 @@
-app:
-    resource: "@AppBundle/Controller/"
+va_api:
+    resource: "@VAApiBundle/Controller/"
     type:     annotation
+    prefix:   /
+
