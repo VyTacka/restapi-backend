@@ -111,3 +111,5 @@ Temporary Items
 # Composer PHAR
 /composer.phar
 
+# doctrine entities generation backup
+*.php~
