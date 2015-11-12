@@ -2,13 +2,11 @@
 
 namespace AppBundle\Controller;
 
-use FOS\RestBundle\Controller\Annotations\Get;
-use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
-class AchievementController extends FOSRestController
+class AchievementsController extends FOSRestController
 {
     /**
      * @ApiDoc(
@@ -21,8 +19,6 @@ class AchievementController extends FOSRestController
      * )
      *
      * @View(templateVar="data")
-     *
-     * @Get("/achievements")
      */
     public function getAchievementsAction()
     {

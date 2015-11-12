@@ -2,13 +2,11 @@
 
 namespace AppBundle\Controller;
 
-use FOS\RestBundle\Controller\Annotations\Get;
-use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
-class DrinkController extends FOSRestController
+class DrinksController extends FOSRestController
 {
     /**
      * @ApiDoc(
@@ -22,8 +20,6 @@ class DrinkController extends FOSRestController
      * )
      *
      * @View(templateVar="data")
-     *
-     * @Post("/drinks")
      */
     public function postDrinkAction()
     {
@@ -41,8 +37,6 @@ class DrinkController extends FOSRestController
      * )
      *
      * @View(templateVar="data")
-     *
-     * @Get("/drinks")
      */
     public function getDrinksAction()
     {
@@ -60,8 +54,6 @@ class DrinkController extends FOSRestController
      * )
      *
      * @View(templateVar="data")
-     *
-     * @Get("/drinks/{id}")
      */
     public function getDrinkAction($id)
     {

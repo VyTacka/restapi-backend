@@ -1,0 +1,11 @@
+achievements:
+    type:     rest
+    resource: "@AppBundle/Controller/AchievementsController.php"
+
+drinks:
+    type:     rest
+    resource: "@AppBundle/Controller/DrinksController.php"
+
+users:
+    type:     rest
+    resource: "@AppBundle/Controller/UsersController.php"
