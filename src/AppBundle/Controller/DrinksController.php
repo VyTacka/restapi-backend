@@ -10,13 +10,13 @@ class DrinksController extends FOSRestController
 {
     /**
      * @ApiDoc(
-     *     section="Drinks",
-     *     description="Creates new Drink",
-     *     input = "AppBundle\Form\DrinkType",
-     *     statusCodes={
-     *         200 = "Returned when successful",
-     *         400 = "Returned when form has errors"
-     *     }
+     *  section="Drinks",
+     *  description="Creates new Drink",
+     *  input = "AppBundle\Form\DrinkType",
+     *  statusCodes={
+     *      200 = "Returned when successful",
+     *      400 = "Returned when form has errors"
+     *  }
      * )
      *
      * @View(templateVar="data")
@@ -28,12 +28,11 @@ class DrinksController extends FOSRestController
 
     /**
      * @ApiDoc(
-     *     section="Drinks",
-     *     description="Returns all drinks",
-     *     output = "AppBundle\Entity\Drink",
-     *     statusCodes={
-     *         200 = "Returned when successful",
-     *     }
+     *  section="Drinks",
+     *  description="Returns all drinks",
+     *  statusCodes={
+     *      200 = "Returned when successful",
+     *  }
      * )
      *
      * @View(templateVar="data")
@@ -45,12 +44,11 @@ class DrinksController extends FOSRestController
 
     /**
      * @ApiDoc(
-     *     section="Drinks",
-     *     description="Returns drink by id",
-     *     output = "AppBundle\Entity\Drink",
-     *     statusCodes={
-     *         200 = "Returned when successful",
-     *     }
+     *  section="Drinks",
+     *  description="Returns drink by id",
+     *  statusCodes={
+     *      200 = "Returned when successful",
+     *  }
      * )
      *
      * @View(templateVar="data")

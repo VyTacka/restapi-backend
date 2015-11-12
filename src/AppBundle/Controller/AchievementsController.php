@@ -10,12 +10,11 @@ class AchievementsController extends FOSRestController
 {
     /**
      * @ApiDoc(
-     *     section="Achievements",
-     *     description="Returns all achievements",
-     *     output = "AppBundle\Entity\Achievement",
-     *     statusCodes={
-     *         200 = "Returned when successful",
-     *     }
+     *  section="Achievements",
+     *  description="Returns all achievements",
+     *  statusCodes={
+     *      200 = "Returned when successful",
+     *  }
      * )
      *
      * @View(templateVar="data")
