@@ -2,20 +2,20 @@
 
 namespace AppBundle\Service;
 
-use AppBundle\Repository\AchievementPropertyRepository;
+use AppBundle\Repository\PropertyRepository;
 
-class AchievementPropertyService
+class PropertyService
 {
     /**
-     * @var AchievementPropertyRepository
+     * @var PropertyRepository
      */
     private $repository;
 
     /**
      * AchievementPropertyService constructor.
-     * @param AchievementPropertyRepository $repository
+     * @param PropertyRepository $repository
      */
-    public function __construct(AchievementPropertyRepository $repository)
+    public function __construct(PropertyRepository $repository)
     {
         $this->repository = $repository;
     }

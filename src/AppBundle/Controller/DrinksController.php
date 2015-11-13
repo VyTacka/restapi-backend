@@ -4,9 +4,11 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Drink;
 use AppBundle\Entity\User;
+use AppBundle\Form\DrinkType;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DrinksController extends FOSRestController
@@ -24,9 +26,30 @@ class DrinksController extends FOSRestController
      *
      * @View(templateVar="data")
      */
-    public function postDrinkAction()
+    public function postDrinkAction(Request $request)
     {
-        return;
+        $user = $this->getUser();
+
+        if (!$user instanceof User) {
+            throw new AccessDeniedException();
+        }
+
+        $drink = new Drink();
+        $drink->setUser($user);
+
+        $form = $this->createForm(new DrinkType(), $drink);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $service = $this->get('app.service.drink');
+
+            $service->create($drink);
+            $service->save();
+
+            return $drink;
+        } else {
+            return $form;
+        }
     }
 
     /**
@@ -46,7 +69,7 @@ class DrinksController extends FOSRestController
     {
         $user = $this->getUser();
 
-        if ($user instanceof User) {
+        if (!$user instanceof User) {
             throw new AccessDeniedException();
         }
 
@@ -73,7 +96,7 @@ class DrinksController extends FOSRestController
     {
         $user = $this->getUser();
 
-        if ($user instanceof User) {
+        if (!$user instanceof User) {
             throw new AccessDeniedException();
         }
 

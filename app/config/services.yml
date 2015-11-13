@@ -4,14 +4,39 @@ parameters:
 #    parameter_name: value
 
 services:
+    app.repository.drink:
+        class: AppBundle\Repository\DrinkRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - AppBundle:Drink
+
+    app.repository.achievement:
+        class: AppBundle\Repository\AchievementRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - AppBundle:Achievement
+
+    app.repository.property:
+        class: AppBundle\Repository\PropertyRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - AppBundle:Property
+
     app.service.drink:
         class: AppBundle\Service\DrinkService
         arguments:
+            - @app.repository.drink
+            - @doctrine.orm.entity_manager
 
     app.service.achievement:
         class: AppBundle\Service\AchievementService
         arguments:
+            - @app.repository.achievement
 
-    app.service.achievement_property:
-        class: AppBundle\Service\AchievementPropertyService
+    app.service.property:
+        class: AppBundle\Service\PropertyService
         arguments:
+            - @app.repository.property

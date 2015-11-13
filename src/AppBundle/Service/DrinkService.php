@@ -4,6 +4,7 @@ namespace AppBundle\Service;
 
 use AppBundle\Entity\User;
 use AppBundle\Repository\DrinkRepository;
+use Doctrine\ORM\EntityManager;
 
 class DrinkService
 {
@@ -13,12 +14,19 @@ class DrinkService
     private $repository;
 
     /**
+     * @var EntityManager
+     */
+    private $entityManager;
+
+    /**
      * DrinkService constructor.
      * @param DrinkRepository $repository
+     * @param EntityManager $entityManager
      */
-    public function __construct(DrinkRepository $repository)
+    public function __construct(DrinkRepository $repository, EntityManager $entityManager)
     {
         $this->repository = $repository;
+        $this->entityManager = $entityManager;
     }
 
     /**
@@ -63,5 +71,22 @@ class DrinkService
     public function findBetween(\DateTime $from, \DateTime $to, User $user)
     {
         return $this->repository->findBetween($from, $to, $user);
+    }
+
+    /**
+     * Save
+     */
+    public function save()
+    {
+        $this->entityManager->flush();
+    }
+    /**
+     * Create
+     *
+     * @param object $entity
+     */
+    public function create($entity)
+    {
+        $this->entityManager->persist($entity);
     }
 }

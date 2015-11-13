@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class DrinkType extends AbstractType
@@ -17,24 +18,23 @@ class DrinkType extends AbstractType
         $builder
             ->add('name')
             ->add('imagePath')
-            ->add('createdAt')
             ->add('packagingCapacity')
             ->add('packagingAmount')
             ->add('packagingPrice')
             ->add('alcVol')
             ->add('rating')
             ->add('note')
-            ->add('user')
-        ;
+            ->add('user');
     }
-    
+
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Drink'
+            'data_class' => 'AppBundle\Entity\Drink',
+            'csrf_protection' => false,
         ));
     }
 
