@@ -40,9 +40,7 @@ class AchievementService
      */
     public function achieveAchievements(User $user)
     {
-        if (!empty($this->checkAchievements($user))) {
-
-        }
+//        if (!empty($this->checkAchievements($user))) {}
 
         return;
     }

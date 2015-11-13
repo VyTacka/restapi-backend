@@ -23,5 +23,4 @@ class AchievementsController extends FOSRestController
     {
         return;
     }
-
 }
