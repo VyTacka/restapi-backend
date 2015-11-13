@@ -5,13 +5,20 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * AchievementProperty
+ * Property
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Repository\AchievementPropertyRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PropertyRepository")
  */
-class AchievementProperty
+class Property
 {
+    /**
+     * Activation rules
+     */
+    const ACTIVE_IF_GREATER_THAN = ">";
+    const ACTIVE_IF_LESS_THAN = "<";
+    const ACTIVE_IF_EQUALS_TO = "==";
+
     /**
      * @var integer
      *
@@ -29,13 +36,6 @@ class AchievementProperty
     private $name;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="value", type="integer")
-     */
-    private $value;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="activation_rule", type="string", length=255)
@@ -48,14 +48,6 @@ class AchievementProperty
      * @ORM\Column(name="activation_value", type="integer")
      */
     private $activationValue;
-
-    /**
-     * @var User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     */
-    private $user;
 
 
     /**
@@ -73,7 +65,7 @@ class AchievementProperty
      *
      * @param string $name
      *
-     * @return AchievementProperty
+     * @return Property
      */
     public function setName($name)
     {
@@ -93,35 +85,11 @@ class AchievementProperty
     }
 
     /**
-     * Set value
-     *
-     * @param integer $value
-     *
-     * @return AchievementProperty
-     */
-    public function setValue($value)
-    {
-        $this->value = $value;
-
-        return $this;
-    }
-
-    /**
-     * Get value
-     *
-     * @return integer
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-    /**
      * Set activationRule
      *
      * @param string $activationRule
      *
-     * @return AchievementProperty
+     * @return Property
      */
     public function setActivation($activationRule)
     {
@@ -145,7 +113,7 @@ class AchievementProperty
      *
      * @param integer $activationValue
      *
-     * @return AchievementProperty
+     * @return Property
      */
     public function setActivationValue($activationValue)
     {
@@ -169,36 +137,12 @@ class AchievementProperty
      *
      * @param string $activationRule
      *
-     * @return AchievementProperty
+     * @return Property
      */
     public function setActivationRule($activationRule)
     {
         $this->activationRule = $activationRule;
 
         return $this;
-    }
-
-    /**
-     * Set user
-     *
-     * @param User $user
-     *
-     * @return AchievementProperty
-     */
-    public function setUser(User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return User
-     */
-    public function getUser()
-    {
-        return $this->user;
     }
 }

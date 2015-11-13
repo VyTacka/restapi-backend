@@ -4,6 +4,14 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    app.service.drink:
+        class: AppBundle\Service\DrinkService
+        arguments:
+
+    app.service.achievement:
+        class: AppBundle\Service\AchievementService
+        arguments:
+
+    app.service.achievement_property:
+        class: AppBundle\Service\AchievementPropertyService
+        arguments:

@@ -29,28 +29,12 @@ class Achievement
     private $name;
 
     /**
-     * @var AchievementProperty
+     * @var Property
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\AchievementProperty")
-     * @ORM\JoinColumn(name="achievement_property_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Property")
+     * @ORM\JoinColumn(name="property_id", referencedColumnName="id")
      */
-    private $achievementProperty;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="unlocked", type="boolean")
-     */
-    private $unlocked;
-
-    /**
-     * @var User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     */
-    private $user;
-
+    private $property;
 
     /**
      * Get id
@@ -87,74 +71,26 @@ class Achievement
     }
 
     /**
-     * Set achievementProperty
+     * Set property
      *
-     * @param integer $achievementProperty
+     * @param Property $property
      *
      * @return Achievement
      */
-    public function setAchievementProperty($achievementProperty)
+    public function setProperty(Property $property = null)
     {
-        $this->achievementProperty = $achievementProperty;
+        $this->property = $property;
 
         return $this;
     }
 
     /**
-     * Get achievementProperty
+     * Get property
      *
-     * @return integer
+     * @return Property
      */
-    public function getAchievementProperty()
+    public function getProperty()
     {
-        return $this->achievementProperty;
-    }
-
-    /**
-     * Set unlocked
-     *
-     * @param boolean $unlocked
-     *
-     * @return Achievement
-     */
-    public function setUnlocked($unlocked)
-    {
-        $this->unlocked = $unlocked;
-
-        return $this;
-    }
-
-    /**
-     * Is unlocked
-     *
-     * @return boolean
-     */
-    public function isUnlocked()
-    {
-        return $this->unlocked;
-    }
-
-    /**
-     * Set user
-     *
-     * @param User $user
-     *
-     * @return Achievement
-     */
-    public function setUser(User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return User
-     */
-    public function getUser()
-    {
-        return $this->user;
+        return $this->property;
     }
 }

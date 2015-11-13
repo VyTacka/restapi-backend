@@ -2,9 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Drink;
+use AppBundle\Entity\User;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DrinksController extends FOSRestController
 {
@@ -36,10 +39,20 @@ class DrinksController extends FOSRestController
      * )
      *
      * @View(templateVar="data")
+     *
+     * @return array
      */
     public function getDrinksAction()
     {
-        return;
+        $user = $this->getUser();
+
+        if ($user instanceof User) {
+            throw new AccessDeniedException();
+        }
+
+        $drinkService = $this->get('app.service.drink');
+
+        return $drinkService->findByUser($user);
     }
 
     /**
@@ -52,9 +65,20 @@ class DrinksController extends FOSRestController
      * )
      *
      * @View(templateVar="data")
+     *
+     * @param $id
+     * @return Drink
      */
     public function getDrinkAction($id)
     {
-        return;
+        $user = $this->getUser();
+
+        if ($user instanceof User) {
+            throw new AccessDeniedException();
+        }
+
+        $drinkService = $this->get('app.service.drink');
+
+        return $drinkService->findOneBy(['user' => $user, 'id' => $id]);
     }
 }

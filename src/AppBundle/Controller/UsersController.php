@@ -57,3 +57,6 @@ class UsersController extends FOSRestController
         }
     }
 }
+
+
+//  http://backend.restapi.dev/app_dev.php/oauth/v2/auth?client_id=2_4jbj8a8f2g00sgk00osog0oo80w44g0o08s4044k8w0w84wc4o&response_type=code&redirect_uri=http://backend.restapi.dev
