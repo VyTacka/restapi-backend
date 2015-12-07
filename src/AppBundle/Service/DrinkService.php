@@ -48,7 +48,7 @@ class DrinkService
      */
     public function findBy($criteria)
     {
-        return $this->repository->findOneBy($criteria);
+        return $this->repository->findBy($criteria);
     }
 
     /**
@@ -80,6 +80,7 @@ class DrinkService
     {
         $this->entityManager->flush();
     }
+
     /**
      * Create
      *

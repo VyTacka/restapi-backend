@@ -1,7 +1,3 @@
-app_api_achievements:
-    type:     rest
-    resource: "@AppBundle/Controller/AchievementsController.php"
-
 app_api_drinks:
     type:     rest
     resource: "@AppBundle/Controller/DrinksController.php"

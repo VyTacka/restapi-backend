@@ -5,7 +5,6 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class DrinkType extends AbstractType
 {
@@ -17,7 +16,7 @@ class DrinkType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('imagePath')
+            ->add('image')
             ->add('packagingCapacity')
             ->add('packagingAmount')
             ->add('packagingPrice')

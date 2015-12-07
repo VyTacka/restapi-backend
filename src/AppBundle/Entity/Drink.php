@@ -31,9 +31,9 @@ class Drink
     /**
      * @var string
      *
-     * @ORM\Column(name="imagePath", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=255)
      */
-    private $imagePath;
+    private $image;
 
     /**
      * @var \DateTime
@@ -128,27 +128,27 @@ class Drink
     }
 
     /**
-     * Set imagePath
+     * Set image
      *
-     * @param string $imagePath
+     * @param string $image
      *
      * @return Drink
      */
-    public function setImagePath($imagePath)
+    public function setImage($image)
     {
-        $this->imagePath = $imagePath;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get imagePath
+     * Get image
      *
      * @return string
      */
-    public function getImagePath()
+    public function getImage()
     {
-        return $this->imagePath;
+        return $this->image;
     }
 
     /**
