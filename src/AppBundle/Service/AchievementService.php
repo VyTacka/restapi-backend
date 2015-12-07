@@ -38,9 +38,9 @@ class AchievementService
      * @param User $user
      * @return array
      */
-    public function achieveAchievements(User $user)
+    public function achieve(User $user)
     {
-//        if (!empty($this->checkAchievements($user))) {}
+
 
         return;
     }
@@ -52,6 +52,35 @@ class AchievementService
      */
     private function checkAchievements(User $user)
     {
+
+
         return;
     }
+
+//    public function checkAchievements() :Vector {
+//        var aRet :Vector = new Vector();
+//
+//        for (var n :String in mAchievements) {
+//            var aAchivement :Achievement = mAchievements[n];
+    //
+    //    if (aAchivement.unlocked == false) {
+    //        var aActiveProps :int = 0;
+    //
+    //        for (var p :int = 0; p < aAchivement.props.length; p++) {
+    //            var aProp :Property = mProps[aAchivement.props[p]];
+    //
+    //        if (aProp.isActive()) {
+    //            aActiveProps++;
+    //        }
+    //      }
+    //
+    //      if (aActiveProps == aAchivement.props.length) {
+    //          aAchivement.unlocked = true;
+    //          aRet.push(aAchivement);
+    //      }
+    //    }
+    //  }
+    //  return aRet;
+    //}
+
 }

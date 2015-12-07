@@ -43,6 +43,6 @@ class DrinkType extends AbstractType
      */
     public function getName()
     {
-        return 'appbundle_drink';
+        return '';
     }
 }

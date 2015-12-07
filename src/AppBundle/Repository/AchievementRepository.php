@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -12,4 +13,9 @@ use Doctrine\ORM\EntityRepository;
  */
 class AchievementRepository extends EntityRepository
 {
+    public function findByUser(User $user)
+    {
+        $qb = $this->createQueryBuilder('a');
+        $qb->
+    }
 }
