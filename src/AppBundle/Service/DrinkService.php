@@ -84,7 +84,7 @@ class DrinkService
     /**
      * Create
      *
-     * @param object $entity
+     * @param \AppBundle\Entity\Drink $entity
      */
     public function create($entity)
     {

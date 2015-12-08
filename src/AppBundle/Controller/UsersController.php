@@ -44,7 +44,7 @@ class UsersController extends FOSRestController
 
         $form = $this->createForm('fos_user_registration', $user, [
             'csrf_protection' => false,
-            'validation_groups' => [ 'Registration', 'Profile' ],
+            'validation_groups' => ['Registration', 'Profile'],
         ]);
         $form->handleRequest($request);
 
