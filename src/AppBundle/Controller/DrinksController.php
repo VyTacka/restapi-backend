@@ -102,6 +102,6 @@ class DrinksController extends FOSRestController
 
         $drinkService = $this->get('app.service.drink');
 
-        return $drinkService->findOneBy([ 'user' => $user, 'id' => $id ]);
+        return $drinkService->findOneBy(['user' => $user, 'id' => $id]);
     }
 }
