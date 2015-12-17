@@ -22,8 +22,7 @@ class DrinkType extends AbstractType
             ->add('packagingPrice')
             ->add('alcVol')
             ->add('rating')
-            ->add('note')
-            ->add('user');
+            ->add('note');
     }
 
     /**
@@ -42,6 +41,6 @@ class DrinkType extends AbstractType
      */
     public function getName()
     {
-        return '';
+        return 'app_bundle_drink';
     }
 }
