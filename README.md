@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/VyTacka/restapi-backend.svg?branch=master)](https://travis-ci.org/VyTacka/restapi-backend)
+
 # Drinks #
 
 ### `GET` /api/drinks.{_format} ###
