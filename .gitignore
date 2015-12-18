@@ -111,6 +111,7 @@ Temporary Items
 /build/
 
 # Composer PHAR
+/deploy.php
 /composer.phar
 
 # doctrine entities generation backup

@@ -26,7 +26,8 @@
         "nelmio/cors-bundle": "^1.4",
         "nelmio/api-doc-bundle": "2.10.*",
         "nelmio/alice": "^2.1",
-        "doctrine/doctrine-fixtures-bundle": "^2.3"
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "deployer/deployer": "^3.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
