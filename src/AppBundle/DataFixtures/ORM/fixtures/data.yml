@@ -19,3 +19,25 @@ AppBundle\Entity\OAuth\AccessToken:
         token: YTU1ZDcyNmJjOGIyYTViOGJk
         expiresAt: 2147483647
         user: @user0
+
+AppBundle\Entity\Drink:
+    drink0:
+        name: drink0
+        image: http://image.com/image0.jpg
+        packagingCapacity: 500
+        packagingAmount: 1
+        packagingPrice: 0.91
+        alcVol: 5.2
+        rating: 7
+        note: note0
+        user: @user0
+    drink1:
+        name: drink1
+        image: http://image.com/image1.jpg
+        packagingCapacity: 568
+        packagingAmount: 2
+        packagingPrice: 0.69
+        alcVol: 5.3
+        rating: 5
+        note: note1
+        user: @user0
