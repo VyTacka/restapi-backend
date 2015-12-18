@@ -1,0 +1,21 @@
+AppBundle\Entity\User:
+    user0:
+        username: test
+        email: test@email.com
+        plainPassword: test
+        enabled: 1
+
+AppBundle\Entity\OAuth\Client:
+    client:
+        id: 1
+        randomId: 4y0wnkhng84k0sckwg8goocc40g00k4ck0w0s8ssks0cckgkkw
+        secret: rqsxzqi6ws0s84c8g8g44so4884sgkook00go4w4g4k4880sc
+        allowedGrantTypes: [client_credentials, refresh_token]
+
+AppBundle\Entity\OAuth\AccessToken:
+    token:
+        id: 1
+        client: @client
+        token: YTU1ZDcyNmJjOGIyYTViOGJk
+        expiresAt: 2147483647
+        user: @user0
